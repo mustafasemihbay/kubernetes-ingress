@@ -300,7 +300,7 @@ func (c *HAProxyController) setupHAProxyRules() error {
 			c.haproxy.AddRule(frontend, rules.ReqSetVar{
 				Name:       "path",
 				Scope:      "txn",
-				Expression: "path",
+				Expression: "path,lower",
 			}, false),
 			c.haproxy.AddRule(frontend, rules.ReqSetVar{
 				Name:       "host",
